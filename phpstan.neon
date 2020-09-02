@@ -1,9 +1,20 @@
+includes:
+    - vendor/phpstan/phpstan-symfony/extension.neon
+    - vendor/phpstan/phpstan-symfony/rules.neon
+
 parameters:
     level: 7
-    paths:
-        - src
-        - test
 
+    # if you run this analysis it will result in an unresolvable type
+    # if you swap the order of the file, the analysis will succeed
+    paths:
+        - src/MyService.php
+        - test/MyClassTest.php
+
+    symfony:
+        container_xml_path: %rootDir%/../../../container.xml
+    parallel:
+    		maximumNumberOfProcesses: 1
     bootstrapFiles:
         - Phpstan-bootstrap.php
 
