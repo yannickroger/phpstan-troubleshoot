@@ -4,6 +4,6 @@
 Rum `composer install`.
 
 ## Try it
-Just run `./vendor/phpstan/phpstan/phpstan analyze`.
+Just run `./vendor/bin/phpstan analyze`.
 
 
